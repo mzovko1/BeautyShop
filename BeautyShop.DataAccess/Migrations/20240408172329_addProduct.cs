@@ -7,7 +7,7 @@
 namespace BeautyShop.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class addProduct : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -60,6 +60,11 @@ namespace BeautyShop.DataAccess.Migrations
                     { 2, 2, "Hair" },
                     { 3, 3, "Skincare" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "Brand", "CategoryId", "Description", "Name", "Picture", "Price", "SkinType" },
+                values: new object[] { 1, "ababab", 1, "Description", "Makeup", "asd", 10m, "ddd" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",

@@ -1,5 +1,4 @@
-﻿@using BeautyShop.Models.ViewModels
-@model ProductViewModel
+﻿@model ProductViewModel
 
 <div class="card shadow border-0 mt-4">
     <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
@@ -14,6 +13,7 @@
     <div class="card-body p-4">
         <form method="post" class="row" enctype="multipart/form-data">
             <input asp-for="Product.Id" hidden />
+            <input asp-for="Product.Picture" hidden />
             <div class="row">
                 <div class="border p-3">
                     <div class="form-floating py-2 col-12">
@@ -42,7 +42,7 @@
                         <span asp-validation-for="Product.SkinType" class="text-danger"></span>
                     </div>
                     <div class="form-floating py-2 col-12">
-                        <select asp-for="@Model.Product.CategoryId" asp-items="@Model.CategoryList" class="form-control border-0 shadow">
+                        <select asp-for="Product.CategoryId" asp-items="@Model.CategoryList" class="form-control border-0 shadow">
                             <option disable select>--Select Category</option>
                         </select>
                         <label asp-for="Product.CategoryId" class="ms-2 text-dark"></label>

@@ -18,6 +18,6 @@ public class CategoryRepository : Repository<Category>, ICategoryRepository
     }
     public void Update(Category category)
     {
-        throw new NotImplementedException();
+        _context.Categories.Update(category);
     }
 }

@@ -100,6 +100,19 @@ namespace BeautyShop.DataAccess.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Brand = "ababab",
+                            CategoryId = 1,
+                            Description = "Description",
+                            Name = "Makeup",
+                            Picture = "asd",
+                            Price = 10m,
+                            SkinType = "ddd"
+                        });
                 });
 
             modelBuilder.Entity("BeautyShop.Models.Models.Product", b =>

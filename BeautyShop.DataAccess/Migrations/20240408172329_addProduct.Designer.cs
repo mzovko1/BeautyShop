@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeautyShop.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240318185851_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20240408172329_addProduct")]
+    partial class addProduct
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,6 +103,19 @@ namespace BeautyShop.DataAccess.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Brand = "ababab",
+                            CategoryId = 1,
+                            Description = "Description",
+                            Name = "Makeup",
+                            Picture = "asd",
+                            Price = 10m,
+                            SkinType = "ddd"
+                        });
                 });
 
             modelBuilder.Entity("BeautyShop.Models.Models.Product", b =>
